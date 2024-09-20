@@ -24,15 +24,21 @@ h2{
     text-decoration-line: underline;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) and (min-width: 400px) {
     .cards{
-    width: 90%
+    width: 90%;
     }
     h1{
         font-size: 12vw;
     }
     h2{
         font-size: 6.25vw;
+    }
+    p{
+        font-size: 3vw;
+    }
+    button{
+        width: 4vw;
     }
 }
 
@@ -61,15 +67,31 @@ h2{
     height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 2rem;
-    background-color: rgb(241, 248, 255);
+    background-color: rgb(181, 201, 214);
     border: outset 10px;
     border-color: rgb(75, 94, 158);
 }
 
-.images{
-    width: 50%;
+.imagehold{
+    width: 60%;
+    border-radius: 2rem;
+    border: outset 7.5px;
+    border-color: rgb(158, 158, 158);
+    background-color: white;
+}
 
+.images{
+    width: 90%;
+    margin: 10%;
+}
+
+
+button{
+    width: 100px;
+    font-size: 1rem;
+    border-radius: 2rem;
+    border: outset 5px;
 }
