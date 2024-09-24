@@ -13,10 +13,13 @@ body,
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1{
-    font-size: 7vw;
+    font-size: 10vw;
 }
 h2{
     font-size: 3vw;
@@ -30,44 +33,29 @@ h2{
 p{
     font-size: 1vw;
 }
+
 a{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center;
     text-decoration-line: none;
 }
 button{
+    align-items: center;
+    text-decoration-line: none;
     width: 10vw;
     padding: 1%;
     font-size: 1.2vw;
-    border: outset 5px;
+    border: outset 0.5vw;
     border-radius: 2rem;
     border-color: white;
 }
 
-button.hover{
+ button:hover{
+    animation-name: growbutton;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 
 }
-/*
-@media screen and (max-width: 600px) {
-    .cards{
-    width: 90%;
-    }
-    h1{
-        font-size: 12vw;
-    }
-    h2{
-        font-size: 6.25vw;
-    }
-    p{
-        font-size: 3vw;
-    }
-    button{
-        width: 90%;
-        font-size: 3.5vw;
-    }
-}
-*/
     
 .title{
     color: rgb(45, 158, 202);
@@ -79,12 +67,10 @@ button.hover{
 }
 
 .container{
-    container:initial;
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -93,20 +79,34 @@ button.hover{
     margin: 1%;
     width: 25%;
     height: 35vw;
+    border: outset 1vw;
+    border-radius: 3rem; 
+    border-color: rgb(75, 94, 158);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    border: outset 10px;
-    border-radius: 3rem; 
-    border-color: rgb(75, 94, 158);
+    align-items: center;  
+    transition: transform 0.3s ease-in-out;
 }
 
+.cards:hover{
+    transform: scale(1.1);
+    box-shadow: 3px 3px 5px black;
+}
+/*
+.cards:hover{
+    animation-name: growcard;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+*/
 .imageholder{
     background-color: white;
     width: 60%;
     height: 45%;
-    border: outset 7.5px;
+    border: outset 0.75vw;
     border-radius: 3rem;
     border-color: rgb(158, 158, 158);
     display: flex;
@@ -118,17 +118,73 @@ button.hover{
 .images{
     width: 90%;
     margin: 1%;
-    background: center;
 }
 
 .textholder{
-    width: 90%;
+    width: 75%;
     height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: border, border-color, border-radius, background-color ease;
+    transition: transform 0.1s ease-in-out;
+    
+}
+.textholder:hover{
+    transform: scale(1.15);
+    background-color: white;
+    border: solid 0.2vw;
+    border-color: black;
+    border-radius: 2rem;
 }
 
-@keyframes grow{
-    box-shadow: 10px 5px 50px black;
+/*
+.textholder:hover{
+    animation-name: growtext;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
+*/
+@media screen and (max-width: 500px) {
+    .cards{
+        width: 125px;
+        height: 175px;
+    }
+    h2{
+        font-size: 15px;
+    }
+    p{
+        font-size: 5px;
+    }
+    button{
+        width: 50px;
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 200px) {
+    h1{
+        font-size: 20px;
+    }
+}
+
+/*
+@keyframes growcard{
+    to{transform: scale(1.1);
+    box-shadow: 3px 3px 10px black;}
+}
+
+@keyframes growbutton{
+    to{transform: scale(1.3);
+    box-shadow: 3px 3px 10px black;}
+}
+
+@keyframes growtext{
+    to{transform: scale(1.25);
+    background-color: white;
+    border: solid 0.2vw;
+    border-color: black;
+    border-radius: 2rem;}
+}
+*/
