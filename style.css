@@ -27,7 +27,7 @@ h2{
     text-decoration-line: underline;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 800px;
+    font-weight: 800;
     font-style: normal;
 }
 p{
@@ -47,21 +47,27 @@ button{
     border: outset 0.5vw;
     border-radius: 2rem;
     border-color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
- button:hover{
+button:hover{
+    transform: scale(1.3);
+    box-shadow: 3px 3px 10px black;
+}
+/*
+button:hover{
     animation-name: growbutton;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 
 }
-    
+*/
 .title{
     color: rgb(45, 158, 202);
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
-    font-weight: 1000px;
+    font-weight: 1000;
     font-style: normal;
     text-decoration-line: underline;
 }
@@ -77,7 +83,7 @@ button{
 .cards{
     background-color: rgb(181, 201, 214);
     margin: 1%;
-    width: 25%;
+    width: 22%;
     height: 35vw;
     border: outset 1vw;
     border-radius: 3rem; 
@@ -86,12 +92,13 @@ button{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;  
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .cards:hover{
     transform: scale(1.1);
     box-shadow: 3px 3px 5px black;
+    background-color: rgb(207, 233, 255);
 }
 /*
 .cards:hover{
@@ -118,17 +125,16 @@ button{
 .images{
     width: 90%;
     margin: 1%;
+    animation: fadeout 3s ease-in-out infinite;
+    animation: fadein 3s ease-in-out infinite;
 }
-
 .textholder{
     width: 75%;
     height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: border, border-color, border-radius, background-color ease;
-    transition: transform 0.1s ease-in-out;
-    
+    transition: transform 0.1s ease-in-out, border, border-color, border-radius, background-color;
 }
 .textholder:hover{
     transform: scale(1.15);
@@ -169,6 +175,16 @@ button{
     }
 }
 
+@media screen and (max-width: 110px) {
+    h2{
+        font-size: 8px;
+    }
+    button{
+        width: 35px;
+        font-size: 5px;
+    }
+}
+
 /*
 @keyframes growcard{
     to{transform: scale(1.1);
@@ -188,3 +204,20 @@ button{
     border-radius: 2rem;}
 }
 */
+
+@keyframes fadeout{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes fadein{
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
