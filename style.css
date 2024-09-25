@@ -31,7 +31,7 @@ h2{
     font-style: normal;
 }
 p{
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 a{
@@ -158,7 +158,7 @@ button:hover{
         font-size: 13px;
     }
     p{
-        font-size: 5px;
+        font-size: 4px;
     }
     button{
         width: 50px;
