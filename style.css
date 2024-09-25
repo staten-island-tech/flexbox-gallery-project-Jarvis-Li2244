@@ -22,7 +22,7 @@ h1{
     font-size: 10vw;
 }
 h2{
-    font-size: 3vw;
+    font-size: 2vw;
     color: rgb(4, 20, 92);
     text-decoration-line: underline;
     font-family: "Inter", sans-serif;
@@ -47,22 +47,14 @@ button{
     border: outset 0.5vw;
     border-radius: 2rem;
     border-color: white;
-    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 button:hover{
     transform: scale(1.3);
     box-shadow: 3px 3px 10px black;
 }
-/*
-button:hover{
-    animation-name: growbutton;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
 
-}
-*/
 .title{
     color: rgb(45, 158, 202);
     font-family: "Roboto Slab", serif;
@@ -92,7 +84,7 @@ button:hover{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;  
-    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .cards:hover{
@@ -100,15 +92,7 @@ button:hover{
     box-shadow: 3px 3px 5px black;
     background-color: rgb(207, 233, 255);
 }
-/*
-.cards:hover{
-    animation-name: growcard;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
 
-*/
 .imageholder{
     background-color: white;
     width: 60%;
@@ -120,21 +104,42 @@ button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.5 ease;
+}
+
+.imageholder:hover{
+    transform: scale(1.1);
+    .images{
+        animation: fadeout 0.2s 1 both;
+        transition-delay: 0.3s;
+        width: 0%;
+    }
+    .images2{
+        animation: fadein 1.1s 1 both;
+        transition-delay: 0.3s;
+        width: 90%;
+        margin: 1%;
+    }
 }
 
 .images{
     width: 90%;
     margin: 1%;
-    animation: fadeout 3s ease-in-out infinite;
-    animation: fadein 3s ease-in-out infinite;
+
 }
+
+.images2{
+    width: 0%;    
+    opacity: 0%;
+}
+
 .textholder{
     width: 75%;
     height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: transform 0.1s ease-in-out, border, border-color, border-radius, background-color;
+    transition: all 0.1s ease;
 }
 .textholder:hover{
     transform: scale(1.15);
@@ -144,21 +149,13 @@ button:hover{
     border-radius: 2rem;
 }
 
-/*
-.textholder:hover{
-    animation-name: growtext;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
-*/
 @media screen and (max-width: 500px) {
     .cards{
         width: 125px;
         height: 175px;
     }
     h2{
-        font-size: 15px;
+        font-size: 13px;
     }
     p{
         font-size: 5px;
@@ -177,7 +174,7 @@ button:hover{
 
 @media screen and (max-width: 110px) {
     h2{
-        font-size: 8px;
+        font-size: 6px;
     }
     button{
         width: 35px;
@@ -185,39 +182,43 @@ button:hover{
     }
 }
 
-/*
-@keyframes growcard{
-    to{transform: scale(1.1);
-    box-shadow: 3px 3px 10px black;}
-}
-
-@keyframes growbutton{
-    to{transform: scale(1.3);
-    box-shadow: 3px 3px 10px black;}
-}
-
-@keyframes growtext{
-    to{transform: scale(1.25);
-    background-color: white;
-    border: solid 0.2vw;
-    border-color: black;
-    border-radius: 2rem;}
-}
-*/
-
 @keyframes fadeout{
     0%{
-        opacity: 0%;
+        opacity: 100%;
     }
     100%{
-        opacity: 100%;
+        opacity: 0%;
     }
 }
 @keyframes fadein{
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 0%;
-    }
+    to{opacity: 100%;}
+}
+
+@keyframes rainbow{
+    0%   {background-color:red;}
+    25%  {background-color:yellow;}
+    50%  {background-color:green;}
+    75%  {background-color:blue;}
+    100% {background-color:purple;}
+}
+
+#crds:hover{
+    transform: translate(0vw,30vw);
+}
+#imghldr:hover{
+    animation: rainbow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#bttn:hover{
+    transform: skew(20deg,0deg);
+}
+#header2{
+    transition: all 0.3s ease;
+}
+#header2:hover{
+    transform: rotate(1turn);
+}
+#txthldr:hover{
+    transform: matrix(2,0,1,1,1,1)
 }
