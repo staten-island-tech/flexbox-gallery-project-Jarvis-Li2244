@@ -9,13 +9,10 @@ html{
 body,
 *{
     text-align: center;
-    font-size: 1rem;
+    font-size: 10px;
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 h1{
@@ -107,23 +104,19 @@ button:hover{
     transition: all 0.5 ease;
 }
 
-.imageholder:hover{
+.imageholder:hover  .images{
     transform: scale(1.1);
-    .images{
-        animation: fadeout 0.2s 1 both;
-        transition-delay: 0.3s;
+        animation: fadeout 0.2s 0.3s 1 both;
         width: 0%;
     }
-    .images2{
-        animation: fadein 1.1s 1 both;
-        transition-delay: 0.3s;
-        width: 90%;
+.imageholder:hover  .images2{
+        animation: fadein 1.1s 0.3s 1 both;
+        width: 80%;
         margin: 1%;
     }
-}
 
 .images{
-    width: 90%;
+    width: 80%;
     margin: 1%;
 
 }
@@ -151,35 +144,47 @@ button:hover{
 }
 
 @media screen and (max-width: 500px) {
-    .cards{
-        width: 125px;
-        height: 175px;
-    }
     h2{
-        font-size: 13px;
+        font-size: 70%;
     }
     p{
-        font-size: 4px;
+        font-size: 40%;
     }
     button{
-        width: 50px;
-        font-size: 7px;
+        font-size: 60%;
     }
 }
 
-@media screen and (max-width: 200px) {
+
+@media screen and (max-width: 350px) {
+    .cards{
+        width: 90%;
+        height: 35vh;
+    }
     h1{
-        font-size: 20px;
+        font-size: 180%;
+    }
+    h2{
+        font-size: 150%;
+    }
+    p{
+        font-size: 60%;
+    }
+    button{
+        width: 20vw;
+        font-size: 50%;
     }
 }
 
 @media screen and (max-width: 110px) {
     h2{
-        font-size: 6px;
+        font-size: 70%;
+    }
+    p{
+        font-size: 30%;
     }
     button{
-        width: 35px;
-        font-size: 5px;
+        width: 40vw;
     }
 }
 
