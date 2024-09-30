@@ -144,49 +144,22 @@ button:hover{
 }
 
 @media screen and (max-width: 500px) {
-    h2{
-        font-size: 70%;
-    }
-    p{
-        font-size: 40%;
-    }
-    button{
-        font-size: 60%;
-    }
-}
-
-
-@media screen and (max-width: 350px) {
     .cards{
         width: 90%;
-        height: 35vh;
-    }
-    h1{
-        font-size: 180%;
+        height: 120vw;
     }
     h2{
-        font-size: 150%;
+        font-size: 8vw;
     }
     p{
-        font-size: 60%;
+        font-size: 3vw;
     }
     button{
         width: 20vw;
-        font-size: 50%;
+        font-size: 4vw;
     }
 }
 
-@media screen and (max-width: 110px) {
-    h2{
-        font-size: 70%;
-    }
-    p{
-        font-size: 30%;
-    }
-    button{
-        width: 40vw;
-    }
-}
 
 @keyframes fadeout{
     0%{
